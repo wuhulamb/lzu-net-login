@@ -1,51 +1,14 @@
-# lzu_net_login
+This project is to login lzu net more conveniently. (I want to use one command to login lzu net and don't want to enter username and password every time)
 
-use selenium to login lzu_net automatically
+There are two ways with Python.
 
-## main tool version
+- selenium
+- requests (Recommended)
 
-```text
-Python 3.9.2
-selenium 4.27.1
-```
+## selenium
 
-## fill username, password and chromedriver's path in lzu_net.py before run the script
+Just simulate browser to login.
 
-Fill the three variable below, which are in lzu_net.py.
+## requests
 
-```text
-account_username
-account_password
-chrome_driver_path
-```
-
-## lzu_net.sh is used to run lzu_net.py
-
-I use `crontab` to run lzu_net.sh when machine starts up.
-
-```text
-# edit crontab
-crontab -e
-```
-
-```text
-# write in
-@reboot bash /path/to/lzu_net.sh
-```
-
-```text
-# remove all tasks
-crontab -r
-```
-
-You need to **edit path variable in lzu_net.sh first** before using it.
-
-Open lzu_net.sh and just read it. It's not difficult to modify.
-
-## lzu_net.log will be created in lzu_net_login directory
-
-You can check lzu_net.log to see if something goes wrong.
-
-## and maybe you want to know how i debug the code?
-
-I write a blog to record the process. It's in Chinese. Click <a href="https://wuhulamb.me/p/using-selenium-to-login-campus-network/" target="_blank">here</a> to see it.
+Send requests to login. It's faster and not need to install chrome-driver and config lots of things.
